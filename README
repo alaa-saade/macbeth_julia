@@ -1,0 +1,34 @@
+MaCBetH : Matrix Completion with the Bethe Hessian
+
+COPYRIGHT (C) 2015 Alaa Saade
+Contact : alaa.saade@m4x.org
+
+This program is free software: you can redistribute it and/or modify it under the terms of the GNU General Public License as published by the Free Software Foundation, either version 3 of the License, or (at your option) any later version.
+
+This program is distributed in the hope that it will be useful, but WITHOUT ANY WARRANTY; without even the implied warranty of MERCHANTABILITY or FITNESS FOR A PARTICULAR PURPOSE.  See the GNU General Public License for more details.
+
+You should have received a copy of the GNU General Public License along with this program.  If not, see <http://www.gnu.org/licenses/>.
+
+- - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - - 
+
+Files included in this package :
+    macbeth.jl : file containing the definition of the module macbeth. 
+    complete.jl : The main reconstruction code. 
+    demo.jl : a sample code to test the completion function
+    BH_subroutines.jl : subroutines related to the spectral part of the algorithm
+    optimization_subroutines.jl : subroutines related to the optimization part of the algorithm
+
+IMPORTANT : this code uses the NLopt package from Julia. Run Pkg.add("NLopt") from Julia to add it.
+
+USAGE : from Julia, `using macbeth` will export two functions in Main
+- demo : runs macbeth on a synthetic example
+- complete : main reconstruction code that completes a partially observed matrix (assumed to be centered).
+use ?demo and ?complete for usage of these functions. 
+
+To be able to use macbeth from anywhere, you can put this directory on the LOAD_PATH which contains the directories Julia searches for modules when calling `using`. To extend the LOAD_PATH : 
+
+push!(LOAD_PATH, "/Path/To/Macbeth/")
+
+To do this automatically on startup, put this statement in the ~/.juliarc.jl file. 
+
+Comments and remarks regarding bugs or functionalities are more than welcome :-).
