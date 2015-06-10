@@ -40,8 +40,9 @@ function demo(;n::Int = 1000,m::Int = 1000,rank::Int = 10, epsilon = 50,Delta = 
 	X = randn(n,rank)
 	Y = randn(m,rank)
 
-	noise = sqrt(Delta)*sprandn(n,m,epsilon/sqrt(n*m))
+	noise = sprandn(n,m,epsilon/sqrt(n*m))
 	obs = spones(noise)
+	noise = sqrt(Delta)*noise
 	true_A = X*Y'
 	A_obs = true_A.*obs + noise 
 

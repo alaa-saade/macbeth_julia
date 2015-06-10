@@ -3,7 +3,7 @@ function build_BH(J,tol_bet,c_1,c_2,verbose)
 	N = length(J[1,:])
 	bet = solve_beta(J,tol_bet,c_1,c_2)
 
-	if maximum(abs(tanh(bet*val))) < 0.9
+	if maximum(abs(tanh(bet*val))) < 0.99
 		if verbose
 			println("Using canonical formulation of the Bethe Hessian")
 		end
